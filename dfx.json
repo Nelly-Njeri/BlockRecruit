@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "dehire_backend": {
+      "main": "src/dehire_backend/main.mo",
+      "type": "motoko"
+    },
+    "dehire_frontend": {
+      "dependencies": [
+        "dehire_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/dehire_frontend/src/index.html"
+      },
+      "source": [
+        "src/dehire_frontend/assets",
+        "dist/dehire_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
