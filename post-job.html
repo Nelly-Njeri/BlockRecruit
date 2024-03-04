@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Job Posting</title>
+</head>
+<body>
+
+<h1>Job Posting</h1>
+
+<form id="jobPostForm">
+  <label for="jobTitle">Job Title:</label>
+  <input type="text" id="jobTitle" name="jobTitle" required>
+
+  <label for="jobDescription">Job Description:</label>
+  <textarea id="jobDescription" name="jobDescription" required></textarea>
+
+  <button type="button" onclick="postJob()">Post Job</button>
+</form>
+
+<script src="ic-ipfs-library.js"></script>
+<script src="post-job.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Job Portal</h1>
+
+<button onclick="showPostedJob()">Posted Jobs</button>
+
+<div id="postedJobContainer" style="display: none;">
+  <h2>Software Engineering Job at G&G</h2>
+  <form id="postedJobForm">
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company" value="G&G" readonly>
+
+    <label for="jobDescription">Job Description:</label>
+    <textarea id="jobDescription" name="jobDescription" readonly>We are seeking a talented and motivated Software Engineer to join our team.</textarea>
+
+    <label for="jobRequirements">Job Requirements:</label>
+    <input type="text" id="jobRequirements" name="jobRequirements" value="Should be conversant with Javascript, Python, and C++" readonly>
+
+    <button type="button" onclick="showApplicationForm()">Apply</button>
+  </form>
+</div>
+
+<div id="applicationFormContainer" style="display: none;">
+  <h2>Apply for Software Engineering Job</h2>
+  <form id="applicationForm">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="contactNo">Contact No:</label>
+    <input type="tel" id="contactNo" name="contactNo" required>
+
+    <label for="skills">Skills:</label>
+    <input type="text" id="skills" name="skills" required>
+
+    <label for="certifications">Upload Certifications (PDF or Image):</label>
+    <input type="file" id="certifications" name="certifications" accept=".pdf, .jpg, .jpeg, .png" required>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<script>
+  function showPostedJob() {
+    document.getElementById('postedJobContainer').style.display = 'block';
+  }
+
+  function showApplicationForm() {
+    document.getElementById('applicationFormContainer').style.display = 'block';
+  }
+
+  document.getElementById('applicationForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Handle the application form submission logic here
+    alert('Application Submitted!');
+
+    // Optionally, you can clear the form after submission
+    this.reset();
+
+    // Hide the application form container
+    document.getElementById('applicationFormContainer').style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
